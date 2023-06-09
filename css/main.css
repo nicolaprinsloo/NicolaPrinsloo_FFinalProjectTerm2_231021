@@ -409,9 +409,8 @@ select{
 }
 
 .checkLeft{
-    width: 70%;
-    height: 100vh;
-    float: left;
+    width: 80%;
+    height: 600px;
     padding-left: 5%;
 }
 
@@ -425,11 +424,11 @@ select{
 }
 
 .checkRight {
-    width: 30%;
-    height: 100vh;
-    float: left;
-    background-color: lightgray;
-    padding-top: 10%;
+    width: 70%;
+    height: 400px;
+    background-color: rgb(248, 181, 48);
+    color: white;
+    padding-top: 5%;
     text-align: center;
 }
 
