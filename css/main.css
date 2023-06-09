@@ -159,8 +159,7 @@ body{
 }
 
 form{
-    width: 100%;
-    height: 600px;
+    width:: 700px;
     margin: 0 auto;
     margin-top: 100px;
     border-radius: 5%;
@@ -231,7 +230,7 @@ footer{
     padding-left: 122px;
     padding-top: 60px;
     padding-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 200px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -275,26 +274,25 @@ footer{
     border-radius: 0%;
 }
 
-form{
-    width: 90%;
+.subForm{
+    width: 80%;
     margin:  0 auto;
     margin-top: 50px;
+    padding-left: 50%;
 }
 
-.left{
-    width: 60%;
-    float: left;
-    height: 130px;
+.custom{
+    width: 50%;
+    height: 50px;
 }
 
-.right{
+.total{
     height: 130px;
     width: 40%;
-    float: left;
+    float: right;
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
-   
 }
 
 .orderCost{
@@ -327,26 +325,29 @@ select{
     margin-top: 15px;
 }
 
-.base-options{
+.bread-options{
     color: white;
     width: 33%;
     height: 100px;
     margin-top: 20px;
-    padding-left: 20px;
+    padding-left: 30px;
     float: left;
+    margin-bottom: 150px;
 }
 
-.base-options h3{
+.bread-options h3{
    margin-left:  -20px;
    margin-bottom: 20px;
 }
+
 
 .toppings{
     color: white;
     width: 66%;
     margin-top: 20px;
     float: left;
-    padding-left: 20px;
+    padding-left: 30px;
+    margin-bottom: 50px;
 }
 
 .toppings h3{
@@ -359,14 +360,35 @@ select{
     float: left;
 }
 
-.makesub{
-    margin-left: 375px;
+.sauces{
+    color: white;
+    width: 66%;
+    margin-top: 20px;
+    float: left;
+    padding-left: 30px;
+}
+
+.sauces h3{
+    margin-left:  -20px;
+    margin-bottom: 20px;
+}
+
+.sauce-check{
+    width: 33%;
+    float: left;
+}
+
+.makeSub{
+    float: left;
+    margin-top: 50px;
+    padding-left: 10px;
 }
 
 
 .output{
     color: white;
     width: 50%;
-    margin:  0 auto;
-    margin-top: 50px;
+    float: left;
+    margin-top: 60px;
+    padding-left: 10px;
 }
