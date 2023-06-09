@@ -79,4 +79,38 @@ realTimeCost = () => {
 }
 
 
-displayOrder
+displayOrder = () => {
+
+    let area = document.getElementById("orders");
+    let total = document.getElementById("orderTotal");
+
+    area.innerHTML = "";
+
+    let overallTotal = 0;
+
+    for(let i = 0; i < subOrder.length; i++){
+
+        let name = subOrder[i].subName;
+        let bread = subOrder[i].subBread;
+        let toppings = subOrder[i].subToppings;
+        let sauces = subOrder[i].subSauces;
+        let price = subOrder[i].subPrice;
+
+        overallTotal += price;
+
+        area.innerHTML += `
+            <div class="card">
+                 <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text"><strong>Bread:</strong> ${bread}</p>
+                    <p class="card-text"><strong>Toppings:</strong> ${toppings}</p>
+                    <p class="card-text"><strong>Sauces:</strong> ${sauces}</p>
+                    <p class="card-text"><strong>Cost:</strong> R${price}.00</p>
+                </div>
+            </div> `
+
+        total.innerHTML = "R" + overallTotal + ".00"
+
+    }
+
+}
