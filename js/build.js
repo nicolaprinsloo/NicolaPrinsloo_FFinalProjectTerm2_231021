@@ -21,7 +21,7 @@ makeSub = () => {
     let topArray = [];
     for(let i = 0; i < toppingOptions.length; i++){
         if(toppingOptions[i].checked){
-            topArray.push(toppingsOptions[i].value);
+            topArray.push(toppingOptions[i].value);
             subTotal = subTotal + +toppingOptions[i].dataset.cost
         }
     }
@@ -96,7 +96,7 @@ displayOrder = () => {
         let sauces = subOrder[i].subSauces;
         let price = subOrder[i].subPrice;
 
-        overallTotal += price;
+        total += price;
 
         area.innerHTML += `
             <div class="card">

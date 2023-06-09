@@ -18,6 +18,9 @@
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
  
+    <script src="../js/build.js"></script>
+    <script src="../js/checkout.js"></script>
+
      <!--Internal Document-->
      <link rel="stylesheet" href="../css/main.css">
  
@@ -62,7 +65,7 @@
         </div>
       </div>
 
-    <form id="subForm" style="color: white;" onchange="realTimeCost()">
+    <form id="subForm" onchange="realTimeCost()" style="color: white;" >
         <h3>Custom SUB Maker</h3>
         
         <!--Name you SUB-->
@@ -78,49 +81,49 @@
             <h3>Bread Options</h3>
   
             <div class="bread-check">
-              <input class="form-check-input" type="radio" name="breadRadio" id="wheat" data-cost="20" value="wheat" checked>
+              <input class="form-check-input" type="radio" name="breadRadio" id="wheat" data-cost="20" value="Wheat Bread" checked>
               <label class="form-check-label" for="wheat">
                 Wheat Bread
               </label>
             </div>
   
             <div class="bread-check">
-              <input class="form-check-input" type="radio" name="breadRadio" id="brown" data-cost="20" value="brown">
+              <input class="form-check-input" type="radio" name="breadRadio" id="brown" data-cost="20" value="Brown Bread">
               <label class="form-check-label" for="brown">
                 Brown Bread
               </label>
             </div>
 
             <div class="bread-check">
-              <input class="form-check-input" type="radio" name="breadRadio" id="white" data-cost="20" value="white">
+              <input class="form-check-input" type="radio" name="breadRadio" id="white" data-cost="20" value="White Bread">
               <label class="form-check-label" for="white">
                 White Bread
               </label>
             </div>
 
             <div class="bread-check">
-                <input class="form-check-input" type="radio" name="breadRadio" id="rye" data-cost="20" value="rye">
+                <input class="form-check-input" type="radio" name="breadRadio" id="rye" data-cost="20" value="Malted Rye">
                 <label class="form-check-label" for="rye">
                     Malted Rye
                 </label>
               </div>
     
               <div class="bread-check">
-                <input class="form-check-input" type="radio" name="breadRadio" id="pWrap" data-cost="20" value="pWrap">
+                <input class="form-check-input" type="radio" name="breadRadio" id="pWrap" data-cost="20" value="Plain Wrap">
                 <label class="form-check-label" for="pWrap">
                     Plain Wrap
                 </label>
               </div>
     
               <div class="bread-check">
-                <input class="form-check-input" type="radio" name="breadRadio" id="gWrap" data-cost="20" value="gWrap">
+                <input class="form-check-input" type="radio" name="breadRadio" id="gWrap" data-cost="20" value="Gluten Free Wrap">
                 <label class="form-check-label" for="gWrap">
                     Gluten Free Wrap
                 </label>
               </div>
 
               <div class="bread-check">
-                <input class="form-check-input" type="radio" name="breadRadio" id="mWrap" data-cost="20" value="mWrap">
+                <input class="form-check-input" type="radio" name="breadRadio" id="mWrap" data-cost="20" value="Multigrain Wrap">
                 <label class="form-check-label" for="mWrap">
                     Multigrain Wrap
                 </label>
@@ -358,6 +361,9 @@
             <div class="output">
               <div class="outHeader">
                 <h3>Your Current Order:</h3>
+              </div>
+
+              <div class="row">
                 <div class="totalOrder"><h3 id="orderTotal">R0.00</h3></div>
               </div>
 
