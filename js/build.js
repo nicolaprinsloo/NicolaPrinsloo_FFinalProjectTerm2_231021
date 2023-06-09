@@ -50,33 +50,69 @@ makeSub = () => {
 
 }
 
-
 realTimeCost = () => {
 
-    realTimePrice = 0;
+    orderTotal = 0;
 
     let breadOption = document.getElementsByName("breadRadio");
+    let totalBread = 0;
     for(let i = 0; i < breadOption.length; i++){
         if(breadOption[i].checked){
-            realTimePrice = realTimePrice + +breadOption[i].dataset.cost
+            totalBread = totalBread + 1;
         }
     }
 
     let toppingOptions = document.getElementsByName("toppings");
+    let totalToppings = 0;
     for(let i = 0; i < toppingOptions.length; i++){
         if(toppingOptions[i].checked){
-            realTimePrice = realTimePrice + +toppingOptions[i].dataset.cost
+            totalToppings = totalToppings + 1;
         }
     }
 
     let sauceOptions = document.getElementsByName("sauces");
+    let totalSauce = 0;
     for(let i = 0; i < sauceOptions.length; i++){
         if(sauceOptions[i].checked){
-            realTimePrice = realTimePrice + +sauceOptions[i].dataset.cost
+            totalSauce = totalSauce + 1;
         }
     }
 
+    realPrice = (totalOptions * 10) + (totalToppings * 5) + (totalSauce * 9);
+
+    orderTotal = (totalOptions * 10) + (totalToppings * 5);
+
+    document.getElementById("orderTotal").innerHTML = "R" + orderTotal + ".00"
+
 }
+
+
+// realTimeCost = () => {
+
+//     realTimePrice = 0;
+
+//     let breadOption = document.getElementsByName("breadRadio");
+//     for(let i = 0; i < breadOption.length; i++){
+//         if(breadOption[i].checked){
+//             realTimePrice = realTimePrice + +breadOption[i].dataset.cost
+//         }
+//     }
+
+//     let toppingOptions = document.getElementsByName("toppings");
+//     for(let i = 0; i < toppingOptions.length; i++){
+//         if(toppingOptions[i].checked){
+//             realTimePrice = realTimePrice + +toppingOptions[i].dataset.cost
+//         }
+//     }
+
+//     let sauceOptions = document.getElementsByName("sauces");
+//     for(let i = 0; i < sauceOptions.length; i++){
+//         if(sauceOptions[i].checked){
+//             realTimePrice = realTimePrice + +sauceOptions[i].dataset.cost
+//         }
+//     }
+
+// }
 
 
 displayOrder = () => {
