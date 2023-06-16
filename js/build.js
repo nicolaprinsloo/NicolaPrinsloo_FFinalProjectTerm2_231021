@@ -12,7 +12,7 @@ makeSub = () => {
     for(let i = 0; i < breadOption.length; i++){
         if(breadOption[i].checked){
             breadValue = breadOption[i].value
-            subTotal = subTotal + +breadOption[i].dataset.cost
+            subTotal = subTotal + +breadOption[i].dataset.cost;
         }
     }
 
@@ -22,7 +22,7 @@ makeSub = () => {
     for(let i = 0; i < toppingOptions.length; i++){
         if(toppingOptions[i].checked){
             topArray.push(toppingOptions[i].value);
-            subTotal = subTotal + +toppingOptions[i].dataset.cost
+            subTotal = subTotal + +toppingOptions[i].dataset.cost;
         }
     }
 
@@ -31,7 +31,7 @@ makeSub = () => {
     for(let i = 0; i < sauceOptions.length; i++){
         if(sauceOptions[i].checked){
             sauceArray.push(sauceOptions[i].value);
-            subTotal = subTotal + +sauceOptions[i].dataset.cost
+            subTotal = subTotal + +sauceOptions[i].dataset.cost;
 
         }
     }
@@ -40,7 +40,8 @@ makeSub = () => {
         subName: subName,
         subBread: breadValue,
         subToppings: topArray,
-        subSauces: sauceArray
+        subSauces: sauceArray,
+        subTotal: subTotal
     });
 
     console.log(subOrder)
@@ -51,66 +52,76 @@ makeSub = () => {
 }
 
 realTimeCost = () => {
+    
+    currentPrice = 0;
 
-    orderTotal = 0;
-
-    let breadOption = document.getElementsByName("breadRadio");
-    let totalBread = 0;
-    for(let i = 0; i < breadOption.length; i++){
-        if(breadOption[i].checked){
-            totalBread = totalBread + 1;
+        //Radio Options
+        let breadOption = document.getElementsByName("breadRadio");
+        let breadValue;
+        for(let i = 0; i < breadOption.length; i++){
+            if(breadOption[i].checked){
+                breadValue = breadOption[i].value
+                subTotal = subTotal + +breadOption[i].dataset.cost;
+            }
         }
-    }
-
-    let toppingOptions = document.getElementsByName("toppings");
-    let totalToppings = 0;
-    for(let i = 0; i < toppingOptions.length; i++){
-        if(toppingOptions[i].checked){
-            totalToppings = totalToppings + 1;
+    
+        //Checkboxes
+        let toppingOptions = document.getElementsByName("toppings");
+        let topArray = [];
+        for(let i = 0; i < toppingOptions.length; i++){
+            if(toppingOptions[i].checked){
+                topArray.push(toppingOptions[i].value);
+                subTotal = subTotal + +toppingOptions[i].dataset.cost;
+            }
         }
-    }
-
-    let sauceOptions = document.getElementsByName("sauces");
-    let totalSauce = 0;
-    for(let i = 0; i < sauceOptions.length; i++){
-        if(sauceOptions[i].checked){
-            totalSauce = totalSauce + 1;
+    
+        let sauceOptions = document.getElementsByName("sauces");
+        let sauceArray = [];
+        for(let i = 0; i < sauceOptions.length; i++){
+            if(sauceOptions[i].checked){
+                sauceArray.push(sauceOptions[i].value);
+                subTotal = subTotal + +sauceOptions[i].dataset.cost;
+    
+            }
         }
-    }
 
-    realPrice = (totalOptions * 10) + (totalToppings * 5) + (totalSauce * 9);
-
-    orderTotal = (totalOptions * 10) + (totalToppings * 5);
-
-    document.getElementById("orderTotal").innerHTML = "R" + orderTotal + ".00"
+    document.getElementById("realTimeCost").innerHTML = "R" + currentPrice + ".00"
 
 }
 
-
 // realTimeCost = () => {
 
-//     realTimePrice = 0;
+//     orderTotal = 0;
 
 //     let breadOption = document.getElementsByName("breadRadio");
+//     let totalBread = 0;
 //     for(let i = 0; i < breadOption.length; i++){
 //         if(breadOption[i].checked){
-//             realTimePrice = realTimePrice + +breadOption[i].dataset.cost
+//             totalBread = totalBread + 1;
 //         }
 //     }
 
 //     let toppingOptions = document.getElementsByName("toppings");
+//     let totalToppings = 0;
 //     for(let i = 0; i < toppingOptions.length; i++){
 //         if(toppingOptions[i].checked){
-//             realTimePrice = realTimePrice + +toppingOptions[i].dataset.cost
+//             totalToppings = totalToppings + 1;
 //         }
 //     }
 
 //     let sauceOptions = document.getElementsByName("sauces");
+//     let totalSauce = 0;
 //     for(let i = 0; i < sauceOptions.length; i++){
 //         if(sauceOptions[i].checked){
-//             realTimePrice = realTimePrice + +sauceOptions[i].dataset.cost
+//             totalSauce = totalSauce + 1;
 //         }
 //     }
+
+//     realPrice = (totalOptions * 10) + (totalToppings * 5) + (totalSauce * 9);
+
+//     orderTotal = (totalOptions * 10) + (totalToppings * 5);
+
+//     document.getElementById("orderTotal").innerHTML = "R" + orderTotal + ".00"
 
 // }
 
@@ -128,11 +139,10 @@ displayOrder = () => {
 
         let name = subOrder[i].subName;
         let bread = subOrder[i].subBread;
-        let toppings = subOrder[i].subToppings;
-        let sauces = subOrder[i].subSauces;
-        let price = subOrder[i].subPrice;
+        let toppings = subOrder[i].subToppings.join(", ");
+        let sauces = subOrder[i].subSauces.join(", ");
+        let price = subOrder[i].subTotal;
 
-        total += price;
 
         area.innerHTML += `
             <div class="card">
