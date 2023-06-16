@@ -89,42 +89,6 @@ realTimeCost = () => {
 
 }
 
-// realTimeCost = () => {
-
-//     orderTotal = 0;
-
-//     let breadOption = document.getElementsByName("breadRadio");
-//     let totalBread = 0;
-//     for(let i = 0; i < breadOption.length; i++){
-//         if(breadOption[i].checked){
-//             totalBread = totalBread + 1;
-//         }
-//     }
-
-//     let toppingOptions = document.getElementsByName("toppings");
-//     let totalToppings = 0;
-//     for(let i = 0; i < toppingOptions.length; i++){
-//         if(toppingOptions[i].checked){
-//             totalToppings = totalToppings + 1;
-//         }
-//     }
-
-//     let sauceOptions = document.getElementsByName("sauces");
-//     let totalSauce = 0;
-//     for(let i = 0; i < sauceOptions.length; i++){
-//         if(sauceOptions[i].checked){
-//             totalSauce = totalSauce + 1;
-//         }
-//     }
-
-//     realPrice = (totalOptions * 10) + (totalToppings * 5) + (totalSauce * 9);
-
-//     orderTotal = (totalOptions * 10) + (totalToppings * 5);
-
-//     document.getElementById("orderTotal").innerHTML = "R" + orderTotal + ".00"
-
-// }
-
 
 displayOrder = () => {
 
@@ -167,6 +131,6 @@ checkOut = () => {
 
     let data = JSON.stringify(subOrder)
     localStorage.setItem('order', data)
-    window.location.href = "../pages/checkout.html";
+    window.location.href = "../pages/checkoutpage.html";
 
 }

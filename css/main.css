@@ -2,9 +2,22 @@ body{
     background-color: #f8cd41;
    }
 
-/* .nav-items{
+.nav-link{
+    color: #f8cd41;
     font-family: 'Open Sans', sans-serif;
-} */
+}
+
+.nav-link:hover{
+    color:rgb(254, 171, 4);
+}
+
+.search-btn{
+    height: 40px;
+    border: 2px solid #f8cd41;
+    border-radius: 40px;
+    float: right;
+    padding-left: 10%;
+}
 
    header{
     width: 100%;
