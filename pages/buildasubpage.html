@@ -67,6 +67,10 @@
 
     <form id="subForm" onchange="realTimeCost()" style="color: white;">
         <h3>Custom SUB Maker</h3>
+
+        <div class="total" style="color: #2b2b2b;">
+          <div class="orderCost" id="realTimeCost">R0.00</div>
+        </div>
         
         <!--Name you SUB-->
         <div class="custom">
@@ -362,30 +366,38 @@
               <div class="outHeader">
                 <h3>Your Current Order:</h3>
               </div>
-
-              <div class="row">
-                <div class="totalOrder"><h3 id="totalOrder">R0.00</h3></div>
-              </div>
-
-              <div id="orders">
-                <!--Inner HTML-->
-              </div>
-
-              <div class="button-con">
-                <button class="btn btn-primary" type="button" onclick="checkOut()">Proceed to Checkout!</button>
-              </div> 
-
-
             </div>
           </div>
 
-          <div class="total" style="color: #2b2b2b;">
-            <div class="orderCost" id="realTimeCost">R0.00</div>
+          <div class="row">
+            <div id="orders">
+              <!--Inner HTML-->
+            </div>
           </div>
+              
+
+              
+
+
+            
+
+          
           
 
 
     </form>
+
+    <div class="checkout">
+
+      <div class="button-con">
+        <button class="btn btn-primary" type="button" onclick="checkOut()">Proceed to Checkout!</button>
+      </div> 
+
+      <div class="row">
+        <div class="totalOrder"><h3 id="totalOrder">R0.00</h3></div>
+      </div>
+
+    </div>
           
       
 

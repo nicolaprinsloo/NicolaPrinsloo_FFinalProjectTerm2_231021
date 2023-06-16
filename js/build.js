@@ -47,7 +47,7 @@ makeSub = () => {
     console.log(subOrder)
 
     document.getElementById("realTimeCost").innerHTML = "R0.00"
-    document.getElementById("subForm").requestFullscreen();
+    document.getElementById("subForm").reset();
 
 }
 
@@ -61,7 +61,7 @@ realTimeCost = () => {
         for(let i = 0; i < breadOption.length; i++){
             if(breadOption[i].checked){
                 breadValue = breadOption[i].value
-                subTotal = subTotal + +breadOption[i].dataset.cost;
+                currentPrice = currentPrice + +breadOption[i].dataset.cost;
             }
         }
     
@@ -71,7 +71,7 @@ realTimeCost = () => {
         for(let i = 0; i < toppingOptions.length; i++){
             if(toppingOptions[i].checked){
                 topArray.push(toppingOptions[i].value);
-                subTotal = subTotal + +toppingOptions[i].dataset.cost;
+                currentPrice = currentPrice + +toppingOptions[i].dataset.cost;
             }
         }
     
@@ -80,7 +80,7 @@ realTimeCost = () => {
         for(let i = 0; i < sauceOptions.length; i++){
             if(sauceOptions[i].checked){
                 sauceArray.push(sauceOptions[i].value);
-                subTotal = subTotal + +sauceOptions[i].dataset.cost;
+                currentPrice = currentPrice + +sauceOptions[i].dataset.cost;
     
             }
         }
@@ -155,9 +155,10 @@ displayOrder = () => {
                 </div>
             </div> `
 
-        total.innerHTML = "R" + overallTotal + ".00"
+        // total.innerHTML = "R" + overallTotal + ".00"
 
     }
+
 
 }
 
