@@ -27,6 +27,10 @@
      <title>Checkout Page: Super Sub - Build Your Own Sub Sandwich</title>
   </head>
 
+  <body onload="displayCheck()">
+
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../index.html">
             <img src="../assets/org logo.png" style="width:80px; height=80px;">
@@ -51,40 +55,59 @@
             <input class="search-btn" type="search" placeholder="Search...">
         </div>
 
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
       </nav>
 
+      <div class="checkLeft">
+        <h1>Your Order</h1>
 
+        <div class="container-fluid"></div>
+
+        <div id="checkoutOrder">
+            <!--inner HTML-->
+        </div>
+      </div>
+
+<!-- 
+    <form id="checkoutOrder">
         <div class="row">
             <div class="checkLeft">
                 <h1>Your Order</h1>
-                <div id="checkoutOrder">
+
+                <div class="container-fluid"></div>
                 
+                <div>
+                    innerHTML
                 </div>
             </div>
         </div>
+    </form> -->
 
+    <div class="container-fluid2"></div>
+
+    <form>
         <div class="row">
             <div class="checkRight">
                 <h1>Your Total</h1>
                 <h2 id="totalOut" class="total">R0.00</h2>
+
     
                 <h3>Enter a Promo Code</h3>
-                <input type="text" class="form-control" placeholder="#0000" id="promo">
-                <button class="btn btn-primary" type="button" onclick="">Add Discount</button>  
+                <input type="text" class="form-control" placeholder="#0000" id="discount">
+                <button class="btn btn-primary" type="button" onclick="displayDiscount()">Add Discount</button>  
     
                 <button class="btn btn-primary" type="button" onclick="resetReturn()">Make Payment</button>  
     
     
             </div>
         </div>
+      </form>
         
         
 
 
+
+
+        
       <footer>
         <div class="row">
             <div class="col-4">

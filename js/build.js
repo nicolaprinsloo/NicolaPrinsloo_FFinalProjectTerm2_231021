@@ -107,6 +107,8 @@ displayOrder = () => {
         let sauces = subOrder[i].subSauces.join(", ");
         let price = subOrder[i].subTotal;
 
+        overallTotal += price;
+
 
         area.innerHTML += `
             <div class="card">
@@ -119,10 +121,9 @@ displayOrder = () => {
                 </div>
             </div> `
 
-        // total.innerHTML = "R" + overallTotal + ".00"
+            total.innerHTML = "R" + overallTotal + ".00"
 
     }
-
 
 }
 
